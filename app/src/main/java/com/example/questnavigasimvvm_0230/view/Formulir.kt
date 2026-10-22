@@ -1,10 +1,12 @@
 package com.example.questnavigasimvvm_0230.view
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -49,6 +51,19 @@ fun FormIsian(
                 label = { Text(text = "Nama Lengkap") },
                 onValueChange = {}
             )
+
+            // Radio Button Jenis Kelamin
+            Row {
+                jenisK.forEach { item ->
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        RadioButton(
+                            selected = false,
+                            onClick = { item }
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
         }
     }
 }
