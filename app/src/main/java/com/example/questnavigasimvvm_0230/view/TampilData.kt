@@ -20,6 +20,12 @@ import com.example.questnavigasimvvm_0230.R
 fun TampilData(
     onBackBtnClick: () -> Unit
 ) {
+    val items = listOf(
+        Pair(stringResource(id = R.string.nama_lengkap), "Contoh Nama"),
+        Pair(stringResource(id = R.string.jenis_kelamin), "Lainnya"),
+        Pair(stringResource(id = R.string.alamat), "Yogyakarta")
+    )
+
     Scaffold(
         modifier = Modifier,
         topBar = {
