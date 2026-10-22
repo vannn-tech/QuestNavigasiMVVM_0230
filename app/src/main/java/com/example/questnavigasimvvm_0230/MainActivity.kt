@@ -3,15 +3,26 @@ package com.example.questnavigasimvvm_0230
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.ui.Modifier
 import com.example.questnavigasimvvm_0230.ui.theme.QuestNavigasiMVVM_0230Theme
 import com.example.questnavigasimvvm_0230.view.DataApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             QuestNavigasiMVVM_0230Theme {
-                DataApp()
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    DataApp()
+                }
             }
         }
     }
