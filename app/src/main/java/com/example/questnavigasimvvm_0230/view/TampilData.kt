@@ -1,8 +1,10 @@
 package com.example.questnavigasimvvm_0230.view
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
@@ -45,19 +47,31 @@ fun TampilData(
         Column(
             modifier = Modifier
                 .padding(paddingValues = isiRuang)
-                .fillMaxWidth()
+                .fillMaxWidth(),
+            verticalArrangement = Arrangement.SpaceBetween
         ) {
-            items.forEach { item ->
-                Column {
-                    Text(text = item.first.uppercase(), fontSize = 16.sp)
-                    Text(
-                        text = item.second,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.Cursive,
-                        fontSize = 22.sp
-                    )
+            Column {
+                items.forEach { item ->
+                    Column {
+                        Text(text = item.first.uppercase(), fontSize = 16.sp)
+                        Text(
+                            text = item.second,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Cursive,
+                            fontSize = 22.sp
+                        )
+                    }
+                    HorizontalDivider(thickness = 1.dp, color = Color.Cyan)
                 }
-                HorizontalDivider(thickness = 1.dp, color = Color.Cyan)
+            }
+
+            // Tombol Back di bagian bawah
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                onClick = onBackBtnClick
+            ) {
+                Text(text = stringResource(id = R.string.back))
             }
         }
     }
